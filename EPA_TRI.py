@@ -1,4 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+Information and function to read from the EPA's Toxic Release Inventory
 
+Used to support the notebook TRI_API.ipynb
+
+This is based off of the project 
+https://github.com/kperry2215/pull_data_from_EPA_Envirofacts_API
+
+"""
+import hvplot.pandas
 import pandas as pd
 import io
 import requests
@@ -36,9 +46,19 @@ wm_dict = {'P91':'Waste water treatment',
            'M72':'Landfill/Disposal Surface Impoundment'
           }
 
-def TRI_Query(table_name1,table_name2,table_name3,state=None, county=None,
-                        area_code=None, year=None,chunk_size=100000):
+def TRI_Query(state=None, county=None,area_code=None, year=None,chunk_size=100000):
+    """Query the EPA Toxic Release Inventory Database
+    
+    This function constructs a query for the EPA Toxic Release Inventory API, with optional arguments for details such as the two-letter state, county name, area code, and year.  More info here: https://www.epa.gov/enviro/envirofacts-data-service-api
+    
+    """
+    
     base_url='https://data.epa.gov/efservice/'
+    #Declare the names of the tables that we want to pull    
+    table_name1='TRI_FACILITY'
+    table_name2='TRI_REPORTING_FORM'
+    table_name3 = 'TRI_TRANSFER_QTY'
+    
     output_format='CSV'
     query = base_url
     query+=table_name1+'/'
