@@ -105,7 +105,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 .reveal i {
   font-style: normal;
   font-family: FontAwesome;
-  font-size: 2em;
+  font-size: 3em;
 }
 .reveal .slides {
   text-align: left;
