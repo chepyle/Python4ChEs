@@ -8,7 +8,7 @@ scipy==1.2.1
 hvplot==0.4.0
 holoviews==1.12.3
 PyGithub==1.43.6
-lxml==4.3.2
+lxml==4.6.2
 beautifulsoup4==4.7.1
 bokeh==1.2.0
 watermark==1.8.2
