@@ -1,1 +1,3 @@
 libsndfile1
+libproj-dev
+libgeos-dev
